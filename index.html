@@ -774,6 +774,18 @@ nav{
 }
 </style>
 
+
+<style id="seafood-preparation-options">
+.product-options{
+  display:block;
+  margin-top:5px;
+  font-size:.84rem;
+  font-weight:700;
+  color:#087f9c;
+  line-height:1.35;
+}
+</style>
+
 </head>
 <body>
 <header>
@@ -837,8 +849,8 @@ nav{
         <div class="product"><strong>Amberjack</strong><span>Fresh</span></div>
         <div class="product"><strong>King Fish</strong><span>Fresh</span></div>
         <div class="product"><strong>Barracuda</strong><span>Fresh</span></div>
-        <div class="product"><strong>Spiny Lobster</strong><span>Seasonal</span></div>
-        <div class="product"><strong>Conch</strong><span>Seasonal</span></div>
+        <div class="product"><strong>Spiny Lobster</strong><small class="product-options">Whole • Tails • Halves</small><span>Seasonal</span></div>
+        <div class="product"><strong>Conch</strong><small class="product-options">Whole • Tenderized</small><span>Seasonal</span></div>
       </div>
     </div>
   </section>
@@ -1043,6 +1055,21 @@ navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
     if(menuBtn) menuBtn.textContent='☰';
   }
 }));
+</script>
+
+<script id="seafood-preparation-script">
+(function(){
+  const prep=document.querySelector('select[name="preparation"], #preparation');
+  if(!prep) return;
+  const items=['Lobster (Tail)', 'Lobster (Halves)', 'Lobster (Whole)', 'Lobster (Live)', 'Whole Fish (Scaled & Gutted)', 'Whole Fish (Gutted)', 'Fish Fillet (Skin On)', 'Fish Fillet (Skin Off)', 'Fish Steaks / Slices', 'Whole Snapper (Plate Size)', 'Conch (85% Cleaned)', 'Conch (85% Cleaned, Tenderized)'];
+  prep.innerHTML='';
+  items.forEach(function(item){
+    const opt=document.createElement('option');
+    opt.value=item;
+    opt.textContent=item;
+    prep.appendChild(opt);
+  });
+})();
 </script>
 
 </body>
