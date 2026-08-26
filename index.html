@@ -983,7 +983,20 @@ nav{
           <label for="quantity">Quantity</label>
           <input id="quantity" placeholder="e.g. 5 lb">
           <label for="prep">Preparation</label>
-          <select id="prep"><option>Whole</option><option>Fillet</option><option>Steak / Slices</option><option>Please advise</option></select>
+          <select id="prep">
+            <option>Lobster (Tail)</option>
+            <option>Lobster (Halves)</option>
+            <option>Lobster (Whole)</option>
+            <option>Lobster (Live)</option>
+            <option>Whole Fish (Scaled &amp; Gutted)</option>
+            <option>Whole Fish (Gutted)</option>
+            <option>Fish Fillet (Skin On)</option>
+            <option>Fish Fillet (Skin Off)</option>
+            <option>Fish Steaks / Slices</option>
+            <option>Whole Snapper (Plate Size)</option>
+            <option>Conch (85% Cleaned)</option>
+            <option>Conch (85% Cleaned, Tenderized)</option>
+          </select>
           <label for="needDate">Date Required</label>
           <input id="needDate" type="date">
           <button class="btn primary" type="submit" style="margin-top:18px;width:100%">Send Order Via WhatsApp</button>
@@ -1056,21 +1069,5 @@ navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   }
 }));
 </script>
-
-<script id="seafood-preparation-script">
-(function(){
-  const prep=document.querySelector('select[name="preparation"], #preparation');
-  if(!prep) return;
-  const items=['Lobster (Tail)', 'Lobster (Halves)', 'Lobster (Whole)', 'Lobster (Live)', 'Whole Fish (Scaled & Gutted)', 'Whole Fish (Gutted)', 'Fish Fillet (Skin On)', 'Fish Fillet (Skin Off)', 'Fish Steaks / Slices', 'Whole Snapper (Plate Size)', 'Conch (85% Cleaned)', 'Conch (85% Cleaned, Tenderized)'];
-  prep.innerHTML='';
-  items.forEach(function(item){
-    const opt=document.createElement('option');
-    opt.value=item;
-    opt.textContent=item;
-    prep.appendChild(opt);
-  });
-})();
-</script>
-
 </body>
 </html>
